@@ -78,7 +78,7 @@ body::before {
 /* Change the hero text color to black */
 .hero-text {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   color: #000; /* Black text for better contrast */
 }
 
@@ -263,8 +263,8 @@ h1 {
 
 #toggle-button {
   position: fixed;
-  top: 10px;
-  right: 10px;
+  top: 20px;
+  right: 100px;
   padding: 10px 20px;
   background-color: #FF9800;
   color: white;
@@ -283,6 +283,7 @@ h1 {
 .shiny {
   background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   animation: shine 2s infinite;
@@ -301,6 +302,7 @@ h1 {
 .shiny-css {
   background: linear-gradient(90deg, #00BFFF, #1E90FF, #00BFFF); /* Light and medium blue */
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   animation: shine 2s infinite;
@@ -310,6 +312,7 @@ h1 {
 .shiny-unreal {
   background: linear-gradient(90deg, #8A2BE2, #4B0082, #8A2BE2); /* Purple shades */
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   animation: shine 2s infinite;
@@ -319,6 +322,7 @@ h1 {
 .shiny-maya {
   background: linear-gradient(90deg, #3CB371, #2E8B57, #3CB371); /* Green shades */
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   animation: shine 2s infinite;
@@ -328,7 +332,57 @@ h1 {
 .shiny-zbrush {
   background: linear-gradient(90deg, #FF4500, #FF6347, #FF4500); /* Orange shades */
   -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   animation: shine 2s infinite;
+}
+
+/* Floating Home button styles */
+.floating-home-button {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Make it circular */
+  background-color: #32CD32; /* Vibrant green background */
+  border: 2px solid #228B22; /* Dark green border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.floating-home-button:hover {
+  background-color: #2E8B57; /* Slightly darker green on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Style for the project buttons */
+.project-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.project-button {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #4CAF50; /* Green background */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }

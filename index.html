@@ -15,6 +15,11 @@
     <img src="img/toggleOff.png" alt="Toggle Button" style="width: 24px; height: 24px;">
   </button>
 
+  <!-- Floating Home button -->
+  <button id="home-button" class="floating-home-button">
+    <img src="img/Home.png" alt="Home Button" style="width: 40px; height: 40px;">
+  </button>
+
   <!-- Page wrapper keeps content centered and readable -->
   <div class="page">
     <!-- HERO SECTION: short introduction and call-to-action -->
@@ -24,7 +29,7 @@
       <p class="hero-label">Web Development Student</p>
       <h1 class="hero-title"><strong>Hello, I'm Jonathan Louie! 👋</strong></h1>
       <p class="hero-text">
-        I'm currently a Student at the University of Utah and studying Game Design. This is my personal website where I share my journey in modeling, programming, and designing games. I also love to watch anime in my free time!
+        Look lower to find out more about me or click one of the buttons!
       </p>
       <a class="hero-button" href="#projects">View My Projects</a>
       <a class="hero-button" href="#cool-websites">Cool Websites</a>
@@ -38,9 +43,8 @@
     <section class="bio" id="bio">
       <h2>Bio</h2>
       <p>
-        I’m a college student studying web development. I enjoy turning
-        ideas into simple, clean websites. My goal is to master the
-        fundamentals and create user-friendly experiences.
+        I am currently a Student at the University of Utah and studying Game Design. 
+        This is my personal website where I share my journey in modeling, programming, and designing games. I also love to watch anime in my free time!
       </p>
     </section>
 
@@ -59,8 +63,26 @@
     <!-- PROJECTS SECTION: dropdowns for each card -->
     <section class="projects" id="projects">
       <details>
-        <summary><h2>📂 Projects</h2></summary>
-        <p>Details about my projects will go here.</p>
+        <summary><h2>📂 Projects I'm Involved In</Inp></h2></summary>
+        <div class="project-buttons">
+          <a href="https://fishguppy.itch.io/project-escargot" target="_blank" class="project-button" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 5px;">
+            <div style="font-weight: bold; margin: 4px 0; font-size: 18px;">Project Escargot</div>
+            <img src="img/ProjEsc.png" alt="Project Escargot" style="width: 95%; height: auto; border-radius: 8px; margin: 5px 0;">
+          </a>
+
+          <a href="https://redrex24.itch.io/the-last-spirit" target="_blank" class="project-button" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 5px; margin-bottom: 2px;">
+            <div style="font-weight: bold; margin: 4px 0; font-size: 21px;">The Last Spirit</div>
+            <img src="img/LastSpirit.png" alt="The Last Spirit" style="width: 100%; height: auto; border-radius: 8px; margin: 5px 0;">
+          </a>
+          <a href="https://tylerkoa.itch.io/operation-3gg" target="_blank" class="project-button" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 5px; margin-bottom: 2px;">
+            <div style="font-weight: bold; margin: 4px 0; font-size: 21px;">Operation: 3GG</div>
+            <img src="img/Operation 3GG.png" alt="Operation: 3GG" style="width: 100%; height: auto; border-radius: 8px; margin: 5px 0;">
+          </a>
+          <a href="https://elderstoneman.itch.io/beniprawna-license-to-krill" target="_blank" class="project-button" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 5px; margin-bottom: 2px;">
+            <div style="font-weight: bold; margin: 4px 0; font-size: 21px;">Beniprawna: License to Krill</div>
+            <img src="img/Beni.png" alt="Beniprawna: License to Krill" style="width: 100%; height: auto; border-radius: 8px; margin: 5px 0;">
+          </a>
+        </div>
       </details>
     </section>
 
@@ -141,6 +163,11 @@
       document.body.style.backgroundSize = isToggled ? 'cover' : 'initial';
       document.body.style.backgroundRepeat = isToggled ? 'no-repeat' : 'initial';
       document.body.style.backgroundPosition = isToggled ? 'center' : 'initial'; // Center the background image
+    });
+
+    // Scroll to the top of the page when the Home button is clicked
+    document.getElementById('home-button').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
