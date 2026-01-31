@@ -1,6 +1,6 @@
 /*
-	Simple, beginner-friendly styles
-	Tip: You can change colors and fonts any time.
+  Simple, beginner-friendly styles
+  Tip: You can change colors and fonts any time.
 */
 
 /* Reset some default spacing */
@@ -43,8 +43,10 @@ body::before {
 
 /* HERO SECTION */
 .hero {
+  position: relative; /* Retain positioning for the hero card */
+  z-index: 0; /* Place the hero card behind the square */
   background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  padding: 20px;
+  padding: 10px; /* Reduced padding to make the green square smaller */
   border-radius: 12px;
   border: 2px solid #e5e7eb;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -59,14 +61,25 @@ body::before {
   color: #6b7280;
 }
 
+/* Add a square around the hero title */
 .hero-title {
   font-size: 25px;
+  color: #FFD700; /* Gold text color */
+  background-color: #32CD32; /* Vibrant green background */
+  padding: 15px; /* Maintain bold padding */
+  border: 4px solid #228B22; /* Darker green border */
+  display: inline-block; /* Ensure the square wraps tightly around the text */
+  border-radius: 8px; /* Slightly round the corners for a modern look */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Add a shadow for depth */
+  text-transform: uppercase; /* Keep the text uppercase for emphasis */
+  margin: 10px; /* Increased margin for more spacing */
 }
 
+/* Change the hero text color to black */
 .hero-text {
   font-size: 18px;
   margin-bottom: 20px;
-  color: #374151;
+  color: #000; /* Black text for better contrast */
 }
 
 .hero-button {
@@ -120,6 +133,8 @@ section h2 {
   border-radius: 12px;
   border: 1px solid #e5e7eb;
   margin-bottom: 10px;
+  font-size: 18px; /* Larger font size for better readability */
+  line-height: 1.8; /* Adjust line height for better spacing */
 }
 
 /* SKILLS SECTION */
@@ -131,16 +146,29 @@ section h2 {
   margin-bottom: 10px;
 }
 
+/* Remove bullet points from the skills list */
 .skills-list {
-  list-style: none;
-  padding-left: 0;
+  list-style: none; /* Disable default bullet points */
+  padding-left: 0; /* Remove default padding */
 }
 
+/* Add hover effect to change color to lighter blue */
 .skills-list li {
-  background-color: #f1f5f9;
-  margin-bottom: 10px;
-  padding: 10px 12px;
-  border-radius: 8px;
+  background-color: #ADD8E6; /* Light blue */
+  color: #003366; /* Dark blue for better contrast */
+  font-weight: bold; /* Keep the text bold */
+  text-align: center; /* Center the text */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease; /* Smooth hover effect */
+  padding: 16px 20px; /* Reduced padding for slightly smaller boxes */
+  font-size: 16px; /* Slightly smaller text */
+  margin-bottom: 12px; /* Add spacing between list items */
+}
+
+.skills-list li:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  background-color: #B0E0E6; /* Slightly darker lighter blue on hover */
 }
 
 /* PROJECTS SECTION */
@@ -230,7 +258,7 @@ h1 {
   background-color: #4CAF50;
   color: white;
   padding: 20px;
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Increased font size */
 }
 
 #toggle-button {
@@ -249,4 +277,58 @@ h1 {
 
 #toggle-button:hover {
   background-color: #FB8C00;
+}
+
+/* Add a shiny effect to the word HTML */
+.shiny {
+  background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Add a shiny effect to the word CSS */
+.shiny-css {
+  background: linear-gradient(90deg, #00BFFF, #1E90FF, #00BFFF); /* Light and medium blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: shine 2s infinite;
+}
+
+/* Add a shiny effect to the words Unreal Engine */
+.shiny-unreal {
+  background: linear-gradient(90deg, #8A2BE2, #4B0082, #8A2BE2); /* Purple shades */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: shine 2s infinite;
+}
+
+/* Add a shiny effect to the word Maya */
+.shiny-maya {
+  background: linear-gradient(90deg, #3CB371, #2E8B57, #3CB371); /* Green shades */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: shine 2s infinite;
+}
+
+/* Add a shiny effect to the word Zbrush */
+.shiny-zbrush {
+  background: linear-gradient(90deg, #FF4500, #FF6347, #FF4500); /* Orange shades */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  animation: shine 2s infinite;
 }

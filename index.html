@@ -7,10 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Website</h1> <!-- Added a heading above everything -->
+  <!-- Main heading of the website -->
+  <h1>Welcome to My Website!</h1>
+
+  <!-- Floating toggle button -->
   <button id="toggle-button" class="floating-button">
     <img src="img/toggleOff.png" alt="Toggle Button" style="width: 24px; height: 24px;">
   </button>
+
   <!-- Page wrapper keeps content centered and readable -->
   <div class="page">
     <!-- HERO SECTION: short introduction and call-to-action -->
@@ -18,9 +22,9 @@
       <!-- Add a circular image above the heading -->
       <img src="img/RealMe.jpg" alt="A picture of me" class="circular-image">
       <p class="hero-label">Web Development Student</p>
-      <h1 class="hero-title"><strong>Hi, I'm Jonathan Louie! 👋</strong></h1>
+      <h1 class="hero-title"><strong>Hello, I'm Jonathan Louie! 👋</strong></h1>
       <p class="hero-text">
-        I'm currently a Student at the University of Utah, studying Game Design. This is my personal website where I share my journey in modeling and designing games. I also love to watch anime in my free time!
+        I'm currently a Student at the University of Utah and studying Game Design. This is my personal website where I share my journey in modeling, programming, and designing games. I also love to watch anime in my free time!
       </p>
       <a class="hero-button" href="#projects">View My Projects</a>
       <a class="hero-button" href="#cool-websites">Cool Websites</a>
@@ -29,6 +33,7 @@
       <a class="hero-button" href="#games">Games</a>
       <a class="hero-button" href="#contact">Contact</a>
     </header>
+
     <!-- BIO SECTION: a short paragraph about you -->
     <section class="bio" id="bio">
       <h2>Bio</h2>
@@ -43,10 +48,11 @@
     <section class="skills" id="skills">
       <h2>Skills</h2>
       <ul class="skills-list">
-        <li>HTML structure and semantics</li>
-        <li>CSS styling and layout basics</li>
-        <li>Responsive design fundamentals</li>
-        <li>Accessible, user-friendly design</li>
+        <li><span class="shiny">HTML</span> structure and semantics</li>
+        <li><span class="shiny-css">CSS</span> styling and layout basics</li>
+        <li><span class="shiny-unreal">Unreal Engine</span> blueprints and fundamentals</li>
+        <li><span class="shiny-maya">Maya</span> modeling and rigging</li>
+        <li><span class="shiny-zbrush">Zbrush</span> sculpting</li>
       </ul>
     </section>
 
@@ -86,57 +92,56 @@
       </details>
     </section>
   </div>
-</body>
 
-<script>
-  // Add event listeners to buttons to flash the appropriate card and open dropdown
-  document.querySelectorAll('.hero-button').forEach(button => {
-    button.addEventListener('click', event => {
-      const targetId = button.getAttribute('href').substring(1); // Get the target ID
-      const targetElement = document.getElementById(targetId);
+  <script>
+    // Add event listeners to buttons to flash the appropriate card and open dropdown
+    document.querySelectorAll('.hero-button').forEach(button => {
+      button.addEventListener('click', event => {
+        const targetId = button.getAttribute('href').substring(1); // Get the target ID
+        const targetElement = document.getElementById(targetId);
 
-      // Close all other dropdowns
-      document.querySelectorAll('details').forEach(details => {
-        if (details !== targetElement.querySelector('details')) {
-          details.removeAttribute('open');
+        // Close all other dropdowns
+        document.querySelectorAll('details').forEach(details => {
+          if (details !== targetElement.querySelector('details')) {
+            details.removeAttribute('open');
+          }
+        });
+
+        if (targetElement) {
+          targetElement.classList.add('flash'); // Add the flash class
+
+          // Remove the flash class after 700ms
+          setTimeout(() => {
+            targetElement.classList.remove('flash');
+          }, 700);
+
+          // Open the dropdown if it's a <details> element
+          const detailsElement = targetElement.querySelector('details');
+          if (detailsElement) {
+            detailsElement.setAttribute('open', '');
+          }
         }
       });
-
-      if (targetElement) {
-        targetElement.classList.add('flash'); // Add the flash class
-
-        // Remove the flash class after 700ms
-        setTimeout(() => {
-          targetElement.classList.remove('flash');
-        }, 700);
-
-        // Open the dropdown if it's a <details> element
-        const detailsElement = targetElement.querySelector('details');
-        if (detailsElement) {
-          detailsElement.setAttribute('open', '');
-        }
-      }
     });
-  });
 
-  const toggleButton = document.getElementById('toggle-button');
-  let isToggled = false;
+    const toggleButton = document.getElementById('toggle-button');
+    let isToggled = false;
 
-  toggleButton.addEventListener('click', () => {
-    isToggled = !isToggled;
+    toggleButton.addEventListener('click', () => {
+      isToggled = !isToggled;
 
-    // Change the button image
-    const img = toggleButton.querySelector('img');
-    img.src = isToggled ? 'img/toggleOn.png' : 'img/toggleOff.png';
+      // Change the button image
+      const img = toggleButton.querySelector('img');
+      img.src = isToggled ? 'img/toggleOn.png' : 'img/toggleOff.png';
 
-    // Change the background image and apply overlay
-    document.body.style.backgroundImage = isToggled
-      ? "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('img/SammmichBG.png')"
-      : "linear-gradient(to bottom, lightblue, lightgreen, lightyellow)";
-    document.body.style.backgroundSize = isToggled ? 'cover' : 'initial';
-    document.body.style.backgroundRepeat = isToggled ? 'no-repeat' : 'initial';
-    document.body.style.backgroundPosition = isToggled ? 'center' : 'initial'; // Center the background image
-  });
-</script>
+      // Change the background image and apply overlay
+      document.body.style.backgroundImage = isToggled
+        ? "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('img/SammmichBG.png')"
+        : "linear-gradient(to bottom, lightblue, lightgreen, lightyellow)";
+      document.body.style.backgroundSize = isToggled ? 'cover' : 'initial';
+      document.body.style.backgroundRepeat = isToggled ? 'no-repeat' : 'initial';
+      document.body.style.backgroundPosition = isToggled ? 'center' : 'initial'; // Center the background image
+    });
+  </script>
 </body>
 </html>
