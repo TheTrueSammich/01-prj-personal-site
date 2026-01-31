@@ -1,1 +1,272 @@
-/* Add you CSS here */
+/*
+	Simple, beginner-friendly styles
+	Tip: You can change colors and fonts any time.
+*/
+
+/* Reset some default spacing */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Base page styles */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: linear-gradient(to bottom, lightblue, lightgreen, lightyellow); /* Gradient from light blue to light green to light yellow */
+	color: #1f2937;
+	line-height: 1.6;
+}
+
+/* Center the page content */
+.page {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 32px 20px 60px;
+}
+
+/* HERO SECTION */
+.hero {
+	background-color: #ffffff;
+	padding: 20px;
+	border-radius: 12px;
+	border: 2px solid #e5e7eb;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	margin-bottom: 32px;
+	text-align: center; /* Center-align content */
+	width: 100%; /* Ensure it spans the full width of the container */
+	margin-left: auto; /* Center horizontally */
+	margin-right: auto;
+}
+
+.hero-label {
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #6b7280;
+}
+
+.hero-title {
+	font-size: 25px; /* Increased font size for larger heading */
+}
+
+.hero-text {
+	font-size: 18px;
+	margin-bottom: 20px;
+	color: #374151;
+}
+
+.hero-button {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 18px;
+	border-radius: 6px;
+	font-weight: bold;
+	margin: 6px 8px; /* Vertical margin: 6px, Horizontal margin: 8px */
+}
+
+/* Background and text colors for buttons */
+.hero-button:nth-of-type(1) {
+  background-color: #f14a4a; /* Darker red */
+  color: #660000; /* Dark red text */
+}
+.hero-button:nth-of-type(2) {
+  background-color: #3696f5; /* Darker blue */
+  color: #003366; /* Dark blue text */
+}
+.hero-button:nth-of-type(3) {
+  background-color: #39ee39; /* Darker green */
+  color: #006600; /* Dark green text */
+}
+.hero-button:nth-of-type(4) {
+  background-color: #f1f135; /* Darker yellow */
+  color: #666600; /* Dark yellow text */
+}
+.hero-button:nth-of-type(5) {
+  background-color: #ee993e; /* Darker orange */
+  color: #663300; /* Dark orange text */
+}
+
+/* Hover effects for buttons */
+.hero-button:hover {
+  filter: brightness(0.9); /* Darken slightly on hover */
+}
+
+/* Adjusted background colors to be slightly darker */
+.hero-button:nth-of-type(1) {
+  background-color: #f14a4a; /* Darker red */
+}
+
+.hero-button:nth-of-type(2) {
+  background-color: #3696f5; /* Darker blue */
+}
+
+.hero-button:nth-of-type(3) {
+  background-color: #39ee39; /* Darker green */
+}
+
+.hero-button:nth-of-type(4) {
+  background-color: #f1f135; /* Darker yellow */
+}
+
+.hero-button:nth-of-type(5) {
+  background-color: #ee993e; /* Darker orange */
+}
+
+/* Add spacing modifiers for buttons */
+.hero-button {
+  margin: 3px 3px; /* Vertical margin: 3px, Horizontal margin: 3px */
+}
+
+/* SECTION TITLES */
+section h2 {
+	font-size: 24px;
+	margin-bottom: 12px;
+}
+
+/* BIO SECTION */
+.bio {
+	background-color: #ffffff;
+	padding: 24px;
+	border-radius: 12px;
+	border: 1px solid #e5e7eb;
+	margin-bottom: 10px; /* Set bottom margin to 10px for all */
+}
+
+/* SKILLS SECTION */
+.skills {
+	background-color: #ffffff;
+	padding: 24px;
+	border-radius: 12px;
+	border: 1px solid #e5e7eb;
+	margin-bottom: 10px; /* Set bottom margin to 10px for all */
+}
+
+.skills-list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.skills-list li {
+	background-color: #f1f5f9;
+	margin-bottom: 10px;
+	padding: 10px 12px;
+	border-radius: 8px;
+}
+
+/* PROJECTS SECTION (placeholder) */
+.projects {
+	background-color: #ffffff;
+	padding: 24px;
+	border-radius: 12px;
+	border: 1px solid #e5e7eb;
+	margin: 0 0 10px; /* Removed upper margin */
+}
+
+/* Style for circular images */
+.circular-image {
+  width: 250px; /* Adjust size as needed */
+  height: 250px;
+  border-radius: 50%; /* Half of width/height for perfect circle */
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 1rem; /* Center image and add spacing below */
+	border: 5px solid darkgreen; /* Added a dark green border */
+}
+
+/* Change image on hover */
+.circular-image:hover {
+  content: url("img/SammichSmaller.png"); /* Replace image on hover */
+}
+
+/* Style dropdown headings to be inline */
+details summary {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Align content vertically */
+  cursor: pointer; /* Add a pointer cursor for better UX */
+}
+
+details summary h2 {
+  display: inline; /* Ensure the heading stays inline */
+  margin: 0; /* Remove default margins */
+  margin-left: 8px; /* Add space between arrow and text */
+}
+
+details summary::before {
+  content: '\25B6'; /* Rightward arrow */
+  font-size: 0.8em; /* Adjust size */
+  margin-right: 8px; /* Add space between arrow and text */
+  transition: transform 0.2s ease; /* Smooth rotation */
+}
+
+details[open] summary::before {
+  content: '\25BC'; /* Downward arrow when open */
+}
+
+/* Add flash effect for cards */
+.projects {
+  transition: background-color 0.3s ease; /* Shortened transition duration */
+}
+
+.projects.flash {
+  background-color: #f14a4a; /* Red */
+}
+
+#cool-websites.flash {
+  background-color: #3696f5; /* Blue */
+}
+
+#my-favorite-anime.flash {
+  background-color: #39ee39; /* Green */
+}
+
+#games.flash {
+  background-color: #f1f135; /* Yellow */
+}
+
+#contact.flash {
+  background-color: #ee993e; /* Orange */
+}
+
+/* Add sliding open animation for dropdowns */
+details[open] > summary ~ * {
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  text-align: center; /* Center the heading */
+  background-color: #4CAF50; /* Green background for banner */
+  color: white; /* White text color */
+  padding: 20px; /* Add padding for banner effect */
+  margin: 0; /* Remove default margin */
+  font-size: 2.5rem; /* Increase font size */
+}
+
+#toggle-button {
+  position: fixed; /* Make the button follow as you scroll */
+  top: 10px; /* Position it at the top right */
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #FF9800; /* Orange background to complement green */
+  color: white; /* White text */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+#toggle-button:hover {
+  background-color: #FB8C00; /* Slightly darker orange on hover */
+}

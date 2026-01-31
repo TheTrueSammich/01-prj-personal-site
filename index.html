@@ -2,10 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Site</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <h1>Website</h1> <!-- Added a heading above everything -->
+  <button id="toggle-button" class="floating-button">
+    <img src="img/toggleOff.png" alt="Toggle Button" style="width: 24px; height: 24px;">
+  </button>
+  <!-- Page wrapper keeps content centered and readable -->
+  <div class="page">
+    <!-- HERO SECTION: short introduction and call-to-action -->
+    <header class="hero">
+      <!-- Add a circular image above the heading -->
+      <img src="img/RealMe.jpg" alt="A picture of me" class="circular-image">
+      <p class="hero-label">Web Development Student</p>
+      <h1 class="hero-title"><strong>Hi, I'm Jonathan Louie! 👋</strong></h1>
+      <p class="hero-text">
+        I'm currently a Student at the University of Utah, studying Game Design. This is my personal website where I share my journey in modeling and designing games. I also love to watch anime in my free time!
+      </p>
+      <a class="hero-button" href="#projects">View My Projects</a>
+      <a class="hero-button" href="#cool-websites">Cool Websites</a>
+      <a class="hero-button" href="#my-favorite-anime">My Favorite Anime</a>
+      <br>
+      <a class="hero-button" href="#games">Games</a>
+      <a class="hero-button" href="#contact">Contact</a>
+    </header>
+    <!-- BIO SECTION: a short paragraph about you -->
+    <section class="bio" id="bio">
+      <h2>Bio</h2>
+      <p>
+        I’m a college student studying web development. I enjoy turning
+        ideas into simple, clean websites. My goal is to master the
+        fundamentals and create user-friendly experiences.
+      </p>
+    </section>
+
+    <!-- SKILLS SECTION: list your skills -->
+    <section class="skills" id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML structure and semantics</li>
+        <li>CSS styling and layout basics</li>
+        <li>Responsive design fundamentals</li>
+        <li>Accessible, user-friendly design</li>
+      </ul>
+    </section>
+
+    <!-- PROJECTS SECTION: dropdowns for each card -->
+    <section class="projects" id="projects">
+      <details>
+        <summary><h2>📂 Projects</h2></summary>
+        <p>Details about my projects will go here.</p>
+      </details>
+    </section>
+
+    <section class="projects" id="cool-websites">
+      <details>
+        <summary><h2>🌐 Cool Websites</h2></summary>
+        <p>Details about cool websites will go here.</p>
+      </details>
+    </section>
+
+    <section class="projects" id="my-favorite-anime">
+      <details>
+        <summary><h2>🎥 My Favorite Anime</h2></summary>
+        <p>Details about my favorite anime will go here.</p>
+      </details>
+    </section>
+
+    <section class="projects" id="games">
+      <details>
+        <summary><h2>🎮 Games</h2></summary>
+        <p>Details about my favorite games will go here.</p>
+      </details>
+    </section>
+
+    <section class="projects" id="contact">
+      <details>
+        <summary><h2>📞 Contact</h2></summary>
+        <p>Details about how to contact me will go here.</p>
+      </details>
+    </section>
+  </div>
+</body>
+
+<script>
+  // Add event listeners to buttons to flash the appropriate card and open dropdown
+  document.querySelectorAll('.hero-button').forEach(button => {
+    button.addEventListener('click', event => {
+      const targetId = button.getAttribute('href').substring(1); // Get the target ID
+      const targetElement = document.getElementById(targetId);
+
+      // Close all other dropdowns
+      document.querySelectorAll('details').forEach(details => {
+        if (details !== targetElement.querySelector('details')) {
+          details.removeAttribute('open');
+        }
+      });
+
+      if (targetElement) {
+        targetElement.classList.add('flash'); // Add the flash class
+
+        // Remove the flash class after 700ms
+        setTimeout(() => {
+          targetElement.classList.remove('flash');
+        }, 700);
+
+        // Open the dropdown if it's a <details> element
+        const detailsElement = targetElement.querySelector('details');
+        if (detailsElement) {
+          detailsElement.setAttribute('open', '');
+        }
+      }
+    });
+  });
+
+  const toggleButton = document.getElementById('toggle-button');
+  let isToggled = false;
+
+  toggleButton.addEventListener('click', () => {
+    isToggled = !isToggled;
+
+    // Change the button image
+    const img = toggleButton.querySelector('img');
+    img.src = isToggled ? 'img/toggleOn.png' : 'img/toggleOff.png';
+
+    // Change the background image and apply overlay
+    document.body.style.backgroundImage = isToggled
+      ? "linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('img/SammichSmall.png')"
+      : "linear-gradient(to bottom, lightblue, lightgreen, lightyellow)";
+    document.body.style.backgroundSize = isToggled ? 'cover' : 'initial';
+    document.body.style.backgroundRepeat = isToggled ? 'no-repeat' : 'initial';
+    document.body.style.backgroundPosition = isToggled ? 'center' : 'initial'; // Center the background image
+  });
+</script>
 </body>
 </html>
