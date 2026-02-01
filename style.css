@@ -64,7 +64,7 @@ body::before {
 /* Add a square around the hero title */
 .hero-title {
   font-size: 25px;
-  color: #4B0082; /* Gold text color */
+  color: #4B0082; /* indigo text color */
   background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 300% 300%;
   padding: 15px; /* Maintain bold padding */
