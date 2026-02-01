@@ -15,7 +15,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: linear-gradient(to bottom, rgb(55, 181, 222), rgb(82, 243, 82), rgb(233, 233, 80));
   color: #1f2937;
-  line-height: 1.6;
+  line-height: 1.76; /* Increased by 10% */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -36,9 +36,9 @@ body::before {
 
 /* Center the page content */
 .page {
-  max-width: 900px;
+  max-width: 990px; /* Increased by 10% */
   margin: 0 auto;
-  padding: 32px 20px 60px;
+  padding: 35.2px 22px 66px; /* Increased by 10% */
 }
 
 /* HERO SECTION */
@@ -46,8 +46,8 @@ body::before {
   position: relative; /* Retain positioning for the hero card */
   z-index: 0; /* Place the hero card behind the square */
   background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  padding: 10px; /* Reduced padding to make the green square smaller */
-  border-radius: 12px;
+  padding: 11px; /* Increased by 10% */
+  border-radius: 13.2px; /* Increased by 10% */
   border: 2px solid #e5e7eb;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 32px;
