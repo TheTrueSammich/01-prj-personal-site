@@ -156,7 +156,7 @@ section h2 {
 
 /* Add hover effect to change color to lighter blue */
 .skills-list li {
-  background-color: #ADD8E6; /* Light blue */
+  background-color: #b7e6ad; /* Light blue */
   color: #003366; /* Dark blue for better contrast */
   font-weight: bold; /* Keep the text bold */
   text-align: center; /* Center the text */
@@ -170,7 +170,7 @@ section h2 {
 .skills-list li:hover {
   transform: scale(1.05); /* Slightly enlarge on hover */
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-  background-color: #B0E0E6; /* Slightly darker lighter blue on hover */
+  background-color: #b0e6c4; /* Slightly darker lighter blue on hover */
 }
 
 /* PROJECTS SECTION */
@@ -607,4 +607,12 @@ h1 {
   100% {
     text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
   }
+}
+
+/* Apply light green background to all cards */
+.hero,
+.bio,
+.skills,
+.projects {
+  background-color: #e6ffe6; /* Lighter green */
 }
