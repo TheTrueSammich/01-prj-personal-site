@@ -50,7 +50,8 @@ body::before {
   border-radius: 13.2px; /* Increased by 10% */
   border: 2px solid #e5e7eb;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 32px;
+  margin-top: -10px; /* Remove top margin */
+  margin-bottom: 32px; /* Keep existing bottom margin */
   text-align: center;
 }
 
@@ -256,10 +257,27 @@ details[open] > summary ~ * {
 
 h1 {
   text-align: center;
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px;
-  font-size: 2.5rem; /* Increased font size */
+  background-color: rgba(0, 0, 139, 0.8); /* Dark blue with 0.8 opacity */
+  color: #00FFFF; /* Neon blue color */
+  margin: 0; /* Ensure no margins are applied */
+  padding: 10px 0; /* Adjust padding for better spacing */
+  font-size: 2.5rem; /* Keep font size */
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  animation: pulsate-neon 2s infinite; /* Add pulsating animation */
+  position: relative; /* Ensure it is above the background */
+  z-index: 1; /* Place it above the background but below the hero card */
+}
+
+@keyframes pulsate-neon {
+  0% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
+  50% {
+    text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+  }
+  100% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
 }
 
 #toggle-button {
@@ -400,10 +418,25 @@ h1 {
 
 h1 {
   text-align: center;
-  background-color: #4CAF50;
-  color: white;
-  padding: 20px;
-  font-size: 2.5rem; /* Increased font size */
+  background-color: rgba(0, 0, 139, 0.8); /* Dark blue with 0.8 opacity */
+  color: #00FFFF; /* Neon blue color */
+  margin: 0; /* Remove margins to make it edge-to-edge */
+  padding: 15px 0; /* Limit padding to reduce size */
+  font-size: 2.5rem; /* Keep font size */
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  animation: pulsate-neon 2s infinite; /* Add pulsating animation */
+}
+
+@keyframes pulsate-neon {
+  0% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
+  50% {
+    text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+  }
+  100% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
 }
 
 #toggle-button {
@@ -549,5 +582,29 @@ h1 {
   }
   100% {
     background-position: 100% 50%;
+  }
+}
+
+/* Add pulsating glow effect to h1 text */
+h1 {
+  text-align: center;
+  background-color: rgba(0, 0, 139, 0.8); /* Dark blue with 0.8 opacity */
+  color: #00FFFF; /* Neon blue color */
+  margin: 0; /* Remove margins to make it edge-to-edge */
+  padding: 15px 0; /* Limit padding to reduce size */
+  font-size: 2.5rem; /* Keep font size */
+  text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  animation: pulsate-neon 2s infinite; /* Add pulsating animation */
+}
+
+@keyframes pulsate-neon {
+  0% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
+  }
+  50% {
+    text-shadow: 0 0 20px #00FFFF, 0 0 40px #00FFFF;
+  }
+  100% {
+    text-shadow: 0 0 10px #00FFFF, 0 0 20px #00FFFF;
   }
 }
